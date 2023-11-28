@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gabarito', sans-serif;
+}
+
+.navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.navbar__s1__title {
+    color: #B830ED;
+}
+
+.navbar__s2 {
+    padding: 10px;
+    border: solid black 1px;
+    border-radius: 50px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar__s2 input {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    background: transparent;
+}
+
+.navbar__s2 input:focus {
+    outline: none;
+}
+
+.navbar__s3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar__s4{
+    display: none;
+}
+.mylearning {
+    position: relative;
+    cursor: pointer;
+    /* width: 100%; */
+
+}
+
+.mylearning__popup {
+    position: absolute;
+    background-color: rgb(218, 147, 245);
+    border: black solid 2px;
+    width: 150%;
+    padding: 10px;
+    top: 150%;
+    right: 0;
+    display: none;
+    /* height: 20vh; */
+}
+
+.mylearning:hover .mylearning__popup {
+    display: block;
+}
+
+.categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: solid black 1px;
+    padding: 10px;
+
+}
+
+.categories p {
+    background-color: #B830ED;
+    padding: 10px;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    border: #B830ED 1px solid;
+}
+.categories p:hover{
+   transition: 1s;
+   background-color: white;
+   color: #B830ED;
+   border: #B830ED 1px solid;
+}
+
+.sale__image {
+    position: relative;
+
+}
+
+.sale__image img {
+    width: 100%;
+}
+
+.sale__image .sale__image__offer {
+    width: 35%;
+    border: solid black 1px;
+    padding: 10px;
+    position: absolute;
+    background-color: white;
+    top: 40%;
+    left: 5%;
+    opacity: 0;
+    animation-name: zoom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.recommended {
+    padding: 10px;
+}
+
+.recommended__container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.course-card {
+  flex-grow: 1;
+  flex-basis: 20%;
+  margin: 5px;
+}
+
+.course-card img {
+    height: 25vh;
+    width: 100%;
+}
+
+.course-card p del {
+    padding-left: 5px;
+}
+
+.topics {
+    padding: 10px;
+}
+
+.topics__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    gap: 10px;
+}
+
+.topics__container p {
+    border: grey solid 2px;
+    padding: 10px;
+    flex-grow: 1;
+    flex-basis: 25%;
+}
+
+.popular {
+    padding: 10px;
+}
+
+.popular__container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.popular-card {
+    flex-grow: 1;
+    flex-basis: 20%;
+    /* width: 250px; */
+    margin: 5px;
+    /* margin-top: 10px; */
+}
+
+.popular-card img {
+    width: 100%;
+    height: 25vh;
+}
+
+.popular-card p del {
+    padding-left: 5px;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 50vh;
+}
+
+.footer .footer__one {
+    padding: 20px;
+    display: flex;
+    gap: 50px;
+}
+
+.footer .footer__one .footer__one__s1 p {
+    margin-top: 15px;
+    margin-left: 20px;
+
+}
+
+.footer .footer__one .footer__one__s2 p {
+    margin-top: 15px;
+}
+
+.footer__two {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+@media screen and (max-width:800px) {
+    body{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .course-card{
+        flex-basis: 40%;
+    }
+    .popular-card{
+        flex-basis: 40%;
+    }
+    .categories{
+        display: none;
+    }
+    .navbar__s2 , .navbar__s3{
+        display: none;
+    }
+    .sale__image .sale__image__offer{
+        top: 15%;
+    }
+    .navbar__s4{
+        display: block;
+        cursor: pointer;
+
+    }
+}
